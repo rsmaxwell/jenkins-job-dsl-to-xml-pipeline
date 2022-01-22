@@ -1,20 +1,16 @@
 pipeline {
 	agent any
 
-	environment {
-		PLAYERS_TT_API_CONFIG_FILE = credentials('5f29b607-bea6-418f-88e1-15f8f45bde15')
-	}
-
 	stages {
 		stage('prepare') {
 			steps {
 				echo 'preparing the application'
-				dir('src/github.com/rsmaxwell/players-tt-api') {
+				dir('src/github.com/rsmaxwell/jenkins-job-dsl-to-xml') {
 					checkout([
 						$class: 'GitSCM', 
 						branches: [[name: '*/main']], 
 						extensions: [], 
-						userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/players-tt-api']]
+						userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/jenkins-job-dsl-to-xml']]
 					])
 				}
 				sh('./prepare.sh')
