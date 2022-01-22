@@ -5,7 +5,7 @@ id -a
 pwd
 ls -al 
 echo $PATH
-. .bashrc
+. ~/.bashrc
 echo $PATH
 
 go version
