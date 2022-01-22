@@ -5,6 +5,9 @@ id -a
 pwd
 ls -al 
 echo $PATH
+. .bashrc
+echo $PATH
+
 go version
 
 NAME="jenkins-job-dsl-to-xml"
