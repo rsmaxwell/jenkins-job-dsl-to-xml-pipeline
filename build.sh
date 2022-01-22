@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -x
+id -a
 pwd
 ls -al 
 echo $PATH
