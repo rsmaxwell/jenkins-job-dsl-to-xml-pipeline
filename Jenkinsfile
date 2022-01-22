@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'go' }
+	agent { image 'rsmaxwell/go' }
 
 	stages {
 		stage('prepare') {
