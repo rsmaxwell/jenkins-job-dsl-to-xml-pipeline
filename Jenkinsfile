@@ -1,5 +1,7 @@
 pipeline {
-	agent { image 'rsmaxwell/go' }
+	agent {
+		docker { image 'rsmaxwell/go' }
+	}
 
 	stages {
 		stage('prepare') {
