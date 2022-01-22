@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -x
+pwd
+ls -al 
+echo $PATH
+go version
+
 NAME="jenkins-job-dsl-to-xml"
 
 export GOPATH="$(pwd)"
