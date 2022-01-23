@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "---[ deploy ]------------------------"
+cd ${BASE}
+echo "pwd = $(pwd)"
+
 set -x 
 
 REPOSITORY=releases

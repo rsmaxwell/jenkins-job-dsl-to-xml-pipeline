@@ -1,9 +1,8 @@
 #!/bin/bash
 
-set -x
-pwd
+echo "---[ prepare ]-----------------------"
 cd ${BASE}
-pwd
+echo "pwd = $(pwd)"
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 set -x

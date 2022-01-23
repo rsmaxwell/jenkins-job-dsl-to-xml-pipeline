@@ -1,10 +1,11 @@
 #!/bin/bash
 
-rm -rf ${WORKSPACE}/bin/*
-
-pwd
+echo "---[ build ]-------------------------"
 cd ${BASE}
-pwd
+echo "pwd = $(pwd)"
+
+set -x
+rm -rf ${WORKSPACE}/bin/*
 
 #go get github.com/dgrijalva/jwt-go
 #go get github.com/eclipse/paho.mqtt.golang
