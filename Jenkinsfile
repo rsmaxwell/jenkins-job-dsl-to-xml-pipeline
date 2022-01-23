@@ -3,6 +3,12 @@ pipeline {
 		label 'go'
 	}
 
+    environment {
+        GOPATH = "${pwd}"
+		PATH = "${PATH}:/usr/local/go/bin"
+		NAME = "job-to-xml"
+    }
+
 	stages {
 		stage('prepare') {
 			steps {

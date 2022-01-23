@@ -2,14 +2,13 @@
 
 set -x 
 pwd
+echo "$PATH"
+echo "$GOPATH"
+echo "$NAME"
 
-. ~/.profile
+rm -rf "${WORKSPACE}/bin/*"
 
-export GOPATH="$(pwd)"
-rm -rf ./bin/*
-
-NAME="job-to-xml"
-BASE="${GOPATH}/src/github.com/rsmaxwell/${NAME}"
+BASE="${WORKSPACE}/src/github.com/rsmaxwell/${NAME}"
 
 cd ${BASE}
 pwd

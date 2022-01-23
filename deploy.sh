@@ -1,8 +1,10 @@
 #!/bin/bash
 
 set -x 
-
-NAME="job-to-xml"
+pwd
+echo "$PATH"
+echo "$GOPATH"
+echo "$NAME"
 
 REPOSITORY=releases
 REPOSITORYID=releases

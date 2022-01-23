@@ -2,6 +2,9 @@
 
 set -x 
 pwd
+echo "$PATH"
+echo "$GOPATH"
+echo "$NAME"
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 set -x    
