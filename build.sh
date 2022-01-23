@@ -4,9 +4,15 @@ set -x
 id -a
 pwd
 ls -al 
+echo "---[ .bashrc ]------------------------------------"
+cat ~/.bashrc
+echo "---[ PATH - before ]------------------------------------"
 echo $PATH
+echo "---[ sourcing .bashrc ]------------------------------------"
 . ~/.bashrc
+echo "---[ PATH - after ]------------------------------------"
 echo $PATH
+echo "--------------------------------------------------"
 
 go version
 
