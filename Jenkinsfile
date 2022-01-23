@@ -7,6 +7,7 @@ pipeline {
         GOPATH = "${WORKSPACE}"
 		PATH = "${PATH}:/usr/local/go/bin"
 		NAME = "job-to-xml"
+		BASE = "${WORKSPACE}/src/github.com/rsmaxwell/${NAME}"
     }
 
 	stages {

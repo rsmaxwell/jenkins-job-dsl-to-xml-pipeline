@@ -1,16 +1,8 @@
 #!/bin/bash
 
-set -x 
+rm -rf ${WORKSPACE}/bin/*
+
 pwd
-echo "PATH = $PATH"
-echo "GOPATH = $GOPATH"
-echo "NAME = $NAME"
-go -version
-
-rm -rf "${WORKSPACE}/bin/*"
-
-BASE="${WORKSPACE}/src/github.com/rsmaxwell/${NAME}"
-
 cd ${BASE}
 pwd
 

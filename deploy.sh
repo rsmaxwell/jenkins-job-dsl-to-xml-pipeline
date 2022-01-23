@@ -1,10 +1,6 @@
 #!/bin/bash
 
 set -x 
-pwd
-echo "$PATH"
-echo "$GOPATH"
-echo "$NAME"
 
 REPOSITORY=releases
 REPOSITORYID=releases
@@ -18,12 +14,12 @@ URL=https://pluto.rsmaxwell.co.uk/archiva/repository/${REPOSITORY}
 
 FILENAME=${ARTIFACTID}_${VERSION}.${PACKAGING}
 
-rm -rf ~/workspace/${NAME}_main/deploy
-mkdir -p ~/workspace/${NAME}_main/deploy
+rm -rf ${WORKSPACE}/deploy
+mkdir -p ${WORKSPACE}/deploy
 
-cd ~/workspace/${NAME}_main/bin
+cd ${WORKSPACE}/bin
 zip ../deploy/${FILENAME} *
 
-cd ~/workspace/${NAME}_main/deploy
+cd ${WORKSPACE}/deploy
 mvn --batch-mode deploy:deploy-file -DgroupId=${GROUPID} -DartifactId=${ARTIFACTID} -Dversion=${VERSION} -Dpackaging=${PACKAGING} -Dfile=${FILENAME} -DrepositoryId=${REPOSITORYID} -Durl=${URL} -DrepositoryId=${REPOSITORYID}
 

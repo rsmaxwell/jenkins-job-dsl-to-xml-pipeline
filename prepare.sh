@@ -1,13 +1,12 @@
 #!/bin/bash
 
-set -x 
+set -x
 pwd
-echo "$PATH"
-echo "$GOPATH"
-echo "$NAME"
+cd ${BASE}
+pwd
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
-set -x    
+set -x
 find . -name "version.go" | while read versionfile; do
 
     echo "Replacing tags in ${versionfile}"
