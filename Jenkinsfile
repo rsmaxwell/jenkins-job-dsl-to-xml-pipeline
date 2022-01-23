@@ -7,12 +7,12 @@ pipeline {
 		stage('prepare') {
 			steps {
 				echo 'preparing the application'
-				dir('src/github.com/rsmaxwell/jenkins-job-dsl-to-xml') {
+				dir('src/github.com/rsmaxwell/job-to-xml') {
 					checkout([
 						$class: 'GitSCM', 
 						branches: [[name: '*/main']], 
 						extensions: [], 
-						userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/jenkins-job-dsl-to-xml']]
+						userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/job-to-xml']]
 					])
 				}
 				sh('./prepare.sh')
