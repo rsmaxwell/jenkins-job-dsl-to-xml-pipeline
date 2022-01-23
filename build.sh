@@ -2,9 +2,10 @@
 
 set -x 
 pwd
-echo "$PATH"
-echo "$GOPATH"
-echo "$NAME"
+echo "PATH = $PATH"
+echo "GOPATH = $GOPATH"
+echo "NAME = $NAME"
+go -version
 
 rm -rf "${WORKSPACE}/bin/*"
 
