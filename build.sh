@@ -12,6 +12,8 @@ echo "---[ sourcing .bashrc ]------------------------------------"
 . ~/.bashrc
 echo "---[ PATH - after ]------------------------------------"
 echo $PATH
+echo "---[ exporting PATH ]------------------------------------"
+export PATH=$PATH:/usr/local/go/bin
 echo "--------------------------------------------------"
 
 go version
