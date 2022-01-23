@@ -4,7 +4,7 @@ pipeline {
 	}
 
     environment {
-        GOPATH = "${pwd}"
+        GOPATH = "${WORKSPACE}"
 		PATH = "${PATH}:/usr/local/go/bin"
 		NAME = "job-to-xml"
     }
