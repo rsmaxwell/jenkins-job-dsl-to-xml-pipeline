@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x 
+
 NAME="job-to-xml"
 
 REPOSITORY=releases

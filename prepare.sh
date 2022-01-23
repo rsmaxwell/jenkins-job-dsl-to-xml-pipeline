@@ -1,9 +1,7 @@
 #!/bin/bash
 
-NAME="job-to-xml"
-BASE="${GOPATH}/src/github.com/rsmaxwell/${NAME}"
-
-cd ${BASE}
+set -x 
+pwd
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 set -x    

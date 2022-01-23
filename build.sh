@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -x 
+pwd
+
 . ~/.profile
 
 export GOPATH="$(pwd)"
@@ -9,6 +12,7 @@ NAME="job-to-xml"
 BASE="${GOPATH}/src/github.com/rsmaxwell/${NAME}"
 
 cd ${BASE}
+pwd
 
 #go get github.com/dgrijalva/jwt-go
 #go get github.com/eclipse/paho.mqtt.golang
