@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="jenkins-job-dsl-to-xml"
+NAME="job-to-xml"
 
 REPOSITORY=releases
 REPOSITORYID=releases

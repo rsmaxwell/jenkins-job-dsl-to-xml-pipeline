@@ -1,33 +1,14 @@
 #!/bin/bash
 
-set -x
-id -a
-pwd
-ls -al 
-echo "---[ .profile ]------------------------------------"
-cat -n ~/.profile
-echo "---[ PATH - before ]------------------------------------"
-echo $PATH
-echo "---[ sourcing .profile ]------------------------------------"
 . ~/.profile
-echo "---[ PATH - after ]------------------------------------"
-echo $PATH
-echo "---[ exporting PATH ]------------------------------------"
-export PATH=$PATH:/usr/local/go/bin
-echo "--------------------------------------------------"
-
-go version
-
-NAME="job-to-xml"
 
 export GOPATH="$(pwd)"
-
 rm -rf ./bin/*
 
-cd "./src/github.com/rsmaxwell/${NAME}"
+NAME="job-to-xml"
+BASE="${GOPATH}/src/github.com/rsmaxwell/${NAME}"
 
-pwd
-ls -al 
+cd ${BASE}
 
 #go get github.com/dgrijalva/jwt-go
 #go get github.com/eclipse/paho.mqtt.golang

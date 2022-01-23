@@ -1,8 +1,9 @@
 #!/bin/bash
 
-NAME="jenkins-job-dsl-to-xml"
+NAME="job-to-xml"
+BASE="${GOPATH}/src/github.com/rsmaxwell/${NAME}"
 
-cd "./src/github.com/rsmaxwell/${NAME}"
+cd ${BASE}
 
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 set -x    
