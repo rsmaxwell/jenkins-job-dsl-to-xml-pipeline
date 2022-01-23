@@ -18,7 +18,7 @@ echo "--------------------------------------------------"
 
 go version
 
-NAME="jenkins-job-dsl-to-xml"
+NAME="job-to-xml"
 
 export GOPATH="$(pwd)"
 
