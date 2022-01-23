@@ -6,6 +6,8 @@ echo "pwd = $(pwd)"
 
 set -x 
 
+mvn -version
+
 REPOSITORY=releases
 REPOSITORYID=releases
 

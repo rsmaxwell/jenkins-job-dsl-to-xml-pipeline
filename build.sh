@@ -7,8 +7,6 @@ echo "pwd = $(pwd)"
 set -x
 rm -rf ${WORKSPACE}/bin/*
 
-mvn -version
-
 #go get github.com/dgrijalva/jwt-go
 #go get github.com/eclipse/paho.mqtt.golang
 #go get github.com/go-playground/locales/en
