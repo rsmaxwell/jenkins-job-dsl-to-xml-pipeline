@@ -9,7 +9,7 @@ set -x
 REPOSITORY=releases
 REPOSITORYID=releases
 
-GROUPID=com.rsmaxwell.players
+GROUPID=com.rsmaxwell.jenkins
 ARTIFACTID=${NAME}_amd64-linux
 VERSION=${BUILD_ID}
 PACKAGING=zip
