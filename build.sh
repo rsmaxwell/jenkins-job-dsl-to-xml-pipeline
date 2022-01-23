@@ -4,12 +4,12 @@ set -x
 id -a
 pwd
 ls -al 
-echo "---[ .bashrc ]------------------------------------"
-cat -n ~/.bashrc
+echo "---[ .profile ]------------------------------------"
+cat -n ~/.profile
 echo "---[ PATH - before ]------------------------------------"
 echo $PATH
-echo "---[ sourcing .bashrc ]------------------------------------"
-. bash -x -c ~/.bashrc
+echo "---[ sourcing .profile ]------------------------------------"
+. ~/.profile
 echo "---[ PATH - after ]------------------------------------"
 echo $PATH
 echo "---[ exporting PATH ]------------------------------------"
