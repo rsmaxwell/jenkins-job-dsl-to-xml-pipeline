@@ -5,11 +5,11 @@ id -a
 pwd
 ls -al 
 echo "---[ .bashrc ]------------------------------------"
-cat ~/.bashrc
+cat -n ~/.bashrc
 echo "---[ PATH - before ]------------------------------------"
 echo $PATH
 echo "---[ sourcing .bashrc ]------------------------------------"
-. ~/.bashrc
+. bash -x -c ~/.bashrc
 echo "---[ PATH - after ]------------------------------------"
 echo $PATH
 echo "---[ exporting PATH ]------------------------------------"
@@ -25,6 +25,9 @@ export GOPATH="$(pwd)"
 rm -rf ./bin/*
 
 cd "./src/github.com/rsmaxwell/${NAME}"
+
+pwd
+ls -al 
 
 #go get github.com/dgrijalva/jwt-go
 #go get github.com/eclipse/paho.mqtt.golang
