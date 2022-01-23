@@ -6,6 +6,11 @@ echo "pwd = $(pwd)"
 
 set -x 
 
+echo "---[ /usr/bin ]------------"
+ls -al /usr/bin
+echo "---[ /usr/local ]------------"
+ls -al /usr/local
+
 mvn -version
 
 REPOSITORY=releases
