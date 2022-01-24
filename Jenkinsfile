@@ -10,7 +10,7 @@ pipeline {
 
 	stages {
 		stage('prepare') {
-            agent { label 'maven' }
+            agent { label 'ubuntu' }
 			steps {
 				echo 'preparing the application'
 				dir('src/github.com/rsmaxwell/job-to-xml') {
