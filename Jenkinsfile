@@ -10,9 +10,7 @@ pipeline {
 
 	stages {
 		stage('prepare') {
-            agent {
-                docker { image 'ubuntu' }
-            }
+            agent { label 'ubuntu' }
 			steps {
 				echo 'preparing the application'
 				dir('src/github.com/rsmaxwell/job-to-xml') {
@@ -29,9 +27,7 @@ pipeline {
 		}
 
 		stage('build') {
-			agent {
-				label 'go'
-			}
+			agent { label 'go' }
 			steps {
 				echo 'building the application'
 				sh('./build.sh')
@@ -39,9 +35,7 @@ pipeline {
 		}
 
 		stage('test') {
-			agent {
-				label 'go'
-			}
+			agent { label 'go' }
 			steps {
 				echo 'testing the application'
 				sh("./test.sh")
@@ -49,9 +43,7 @@ pipeline {
 		}
 
 		stage('deploy') {
-			agent {
-				label 'maven'
-			}
+			agent { label 'maven' }
 			steps {
 				echo 'deploying the application'
 				sh('./deploy.sh')
