@@ -10,9 +10,9 @@ pipeline {
 
 	stages {
 		stage('prepare') {
-			agent {
-				label 'go'
-			}
+            agent {
+                docker { image 'ubuntu' }
+            }
 			steps {
 				echo 'preparing the application'
 				dir('src/github.com/rsmaxwell/job-to-xml') {
@@ -24,6 +24,7 @@ pipeline {
 					])
 				}
 				sh('./prepare.sh')
+				echo 'finished preparing'
 			}
 		}
 
