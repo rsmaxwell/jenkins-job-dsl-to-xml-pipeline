@@ -1,5 +1,5 @@
 pipeline {
-	agent none
+	agent { label 'go' }
 
     environment {
         GOPATH = "${WORKSPACE}"
@@ -10,7 +10,6 @@ pipeline {
 
 	stages {
 		stage('prepare') {
-            agent { label 'ubuntu' }
 			steps {
 				echo 'preparing the application'
 				dir('src/github.com/rsmaxwell/job-to-xml') {
@@ -27,7 +26,6 @@ pipeline {
 		}
 
 		stage('build') {
-			agent { label 'go' }
 			steps {
 				echo 'building the application'
 				sh('./build.sh')
@@ -35,7 +33,6 @@ pipeline {
 		}
 
 		stage('test') {
-			agent { label 'go' }
 			steps {
 				echo 'testing the application'
 				sh("./test.sh")
@@ -43,7 +40,6 @@ pipeline {
 		}
 
 		stage('deploy') {
-			agent { label 'maven' }
 			steps {
 				echo 'deploying the application'
 				sh('./deploy.sh')
