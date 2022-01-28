@@ -7,7 +7,7 @@ pipeline {
               spec:
                 containers:
                 - name: go
-                  image: golang:latest
+                  image: rsmaxwell/ubuntu:latest
                   command:
                   - cat
                   tty: true
