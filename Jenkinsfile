@@ -28,7 +28,15 @@ pipeline {
     }
 
 	stages {
-		stage('test') {
+		stage('test maven ') {
+			steps {
+				container('maven') {
+					sh('mvn version')
+				}
+			}
+		}
+
+		stage('test go') {
 			steps {
 				container('go') {
 					sh('go version')
