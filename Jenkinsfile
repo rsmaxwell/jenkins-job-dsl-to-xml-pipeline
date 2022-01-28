@@ -7,7 +7,7 @@ pipeline {
               spec:
                 containers:
                 - name: go
-                  image: rsmaxwell/ubuntu:latest
+                  image: maven:alpine
                   command:
                   - cat
                   tty: true
