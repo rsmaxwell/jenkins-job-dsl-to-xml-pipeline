@@ -28,6 +28,14 @@ pipeline {
     }
 
 	stages {
+		stage('test') {
+			steps {
+				container('go') {
+					sh('go version')
+				}
+			}
+		}
+
 		stage('prepare') {
 			steps {
 				container('go') {
