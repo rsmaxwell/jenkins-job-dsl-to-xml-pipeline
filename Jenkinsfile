@@ -7,7 +7,7 @@ pipeline {
               spec:
                 containers:
                 - name: go
-                  image: maven:alpine
+                  image: golaang:latest
                   command:
                   - cat
                   tty: true
