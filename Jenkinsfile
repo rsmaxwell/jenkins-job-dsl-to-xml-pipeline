@@ -7,7 +7,7 @@ pipeline {
               spec:
                 containers:
                 - name: go
-                  image: bullseye
+                  image: golang:latest
                   command:
                   - cat
                   tty: true
