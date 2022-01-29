@@ -25,6 +25,11 @@ pipeline {
         }
     }
 
+    options {
+		buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+		disableConcurrentBuilds()
+	}
+
     environment {
         GOPATH = "${WORKSPACE}"
 		PATH = "${PATH}:/usr/local/go/bin:${GOPATH}/bin"
