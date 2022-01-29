@@ -6,6 +6,11 @@ pipeline {
               kind: Pod
               spec:
                 containers:
+                - name: git
+                  image: alpine/git:latest
+                  command:
+                  - cat
+                  tty: true
                 - name: go
                   image: golang:latest
                   command:
@@ -46,7 +51,7 @@ pipeline {
 
 		stage('prepare') {
 			steps {
-				container('go') {
+				container('git') {
 					echo 'preparing the application'
 					dir('src/github.com/rsmaxwell/job-to-xml') {
 						checkout([
