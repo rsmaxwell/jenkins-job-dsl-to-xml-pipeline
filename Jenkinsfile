@@ -7,7 +7,7 @@ pipeline {
               spec:
                 containers:
                 - name: git
-                  image: alpine/git:latest
+                  image: rsmaxwell/git
                   command:
                   - cat
                   tty: true
