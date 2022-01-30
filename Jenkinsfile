@@ -50,9 +50,9 @@ pipeline {
 							userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/job-to-xml']]
 						])
 					}
+					sh('id -a')
 					sh('pwd')
 					sh('ls -al')
-					sh('tree -L 2')
 					sh('./prepare.sh')
 					echo 'finished preparing'
 				}
