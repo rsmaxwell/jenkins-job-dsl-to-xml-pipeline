@@ -38,22 +38,6 @@ pipeline {
     }
 
 	stages {
-		stage('test maven ') {
-			steps {
-				container('maven') {
-					sh('mvn -version')
-				}
-			}
-		}
-
-		stage('test go') {
-			steps {
-				container('go') {
-					sh('go version')
-				}
-			}
-		}
-
 		stage('prepare') {
 			steps {
 				container('git') {
@@ -66,6 +50,9 @@ pipeline {
 							userRemoteConfigs: [[url: 'https://github.com/rsmaxwell/job-to-xml']]
 						])
 					}
+					sh('pwd')
+					sh('ls -al')
+					sh('tree -L 2')
 					sh('./prepare.sh')
 					echo 'finished preparing'
 				}
