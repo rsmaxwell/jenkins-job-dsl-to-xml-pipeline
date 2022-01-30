@@ -52,6 +52,7 @@ pipeline {
 					}
 					sh('pwd')
 					sh('ls -al')
+					sh('ls -al ./prepare.sh')
 					sh('./prepare.sh')
 					echo 'finished preparing'
 				}
