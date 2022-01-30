@@ -41,7 +41,7 @@ pipeline {
 		stage('test maven ') {
 			steps {
 				container('maven') {
-					sh('mvn version')
+					sh('mvn -version')
 				}
 			}
 		}
