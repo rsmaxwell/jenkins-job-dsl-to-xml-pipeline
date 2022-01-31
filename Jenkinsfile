@@ -5,6 +5,17 @@ pipeline {
               apiVersion: v1
               kind: Pod
               spec:
+                initContainers:
+                - name: install
+                  image: busybox
+                  command: [ ls, "-al" ]
+                  command: [ ls, "-al", "/init" ]
+                  command: [ ls, "-al", "/data" ]
+                  volumeMounts:
+                  - name: maven-init
+                    mountPath: "/init"
+                  - name: maven-home
+                    mountPath: "/data"
                 containers:
                 - name: git
                   image: rsmaxwell/git
@@ -27,6 +38,12 @@ pipeline {
                 volumes:
                 - name: maven-home
                   emptyDir: {}
+                - name: maven-init
+                  hostPath:
+                    # directory location on host
+                    path: /data
+                    # this field is optional
+                    type: Directory
               '''
         }
     }
