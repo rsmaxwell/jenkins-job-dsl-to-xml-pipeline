@@ -38,6 +38,25 @@ pipeline {
     }
 
 	stages {
+
+		stage('test maven') {
+			steps {
+				container('maven') {
+					echo 'test maven'
+					sh('mvn -version')
+				}
+			}
+		}
+
+		stage('test go') {
+			steps {
+				container('go') {
+					echo 'test go'
+					sh('go version')
+				}
+			}
+		}
+
 		stage('prepare') {
 			steps {
 				container('git') {
