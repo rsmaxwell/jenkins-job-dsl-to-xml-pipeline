@@ -24,6 +24,9 @@ pipeline {
                   command:
                   - cat
                   tty: true
+                volumes:
+                - name: maven-home
+                  emptyDir: {}
               '''
         }
     }
