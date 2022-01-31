@@ -11,6 +11,7 @@ pipeline {
                   command: [ ls, "-al" ]
                   command: [ ls, "-al", "/init" ]
                   command: [ ls, "-al", "/data" ]
+                  command: [ cp, "/init/settings.xml", "/data/settings.xml" ]
                   volumeMounts:
                   - name: maven-init
                     mountPath: "/init"
