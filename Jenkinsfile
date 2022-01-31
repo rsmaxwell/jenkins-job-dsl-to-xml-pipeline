@@ -49,6 +49,11 @@ pipeline {
             steps {
                 container('maven') {
                     echo 'test maven'
+                    sh('id -a')
+                    sh('pwd')
+                    sh('ls -al ')
+                    sh('ls -al ~/.m2')
+                    sh('ls -al /usr/bin/mvn')
                     sh('mvn -version')
                 }
             }
