@@ -13,10 +13,10 @@ pipeline {
                   command: [ ls, "-al", "/data" ]
                   command: [ cp, "/init/settings.xml", "/data/settings.xml" ]
                   volumeMounts:
-                  - name: maven-init-dir
-                    mountPath: "/init"
-                  - name: maven-init-file
-                    mountPath: "/init/settings.xml"
+                  - name: mydir
+                    mountPath: "/var/local/aaa"
+                  - name: myfile
+                    mountPath: "/var/local/aaa/settings.xml"
                   - name: maven-home
                     mountPath: "/data"
                 containers:
@@ -39,15 +39,16 @@ pipeline {
                   - cat
                   tty: true
                 volumes:
+                - name: mydir
+                  hostPath:
+                    path: /var/local/aaa
+                    type: DirectoryOrCreate
+                - name: myfile
+                  hostPath:
+                    path: /var/local/aaa/settings.xml
+                    type: FileOrCreate
                 - name: maven-home
                   emptyDir: {}
-                - name: maven-init-dir
-                  hostPath:
-                    path: /init
-                    type: DirectoryOrCreate
-                - name: maven-init-file
-                    path: /data/settings.xml
-                    type: FileOrCreate
               '''
         }
     }
