@@ -12,12 +12,12 @@ pipeline {
                   - cat
                   tty: true
                 - name: go
-                  image: golang:latest
+                  image: rsmaxwell/go
                   command:
                   - cat
                   tty: true
                 - name: maven
-                  image: rsmaxwell/git
+                  image: rsmaxwell/maven
                   volumeMounts:
                   - name: maven-home
                     mountPath: /home/builder/.m2
