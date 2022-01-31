@@ -40,10 +40,8 @@ pipeline {
                   emptyDir: {}
                 - name: maven-init
                   hostPath:
-                    # directory location on host
                     path: /data
-                    # this field is optional
-                    type: Directory
+                    type: DirectoryOrCreate
               '''
         }
     }
