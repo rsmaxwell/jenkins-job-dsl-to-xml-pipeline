@@ -17,7 +17,10 @@ pipeline {
                   - cat
                   tty: true
                 - name: maven
-                  image: maven:alpine
+                  image: rsmaxwell/git
+				  volumeMounts:
+    			  - name: maven-home
+      			    mountPath: /home/builder/.m2
                   command:
                   - cat
                   tty: true
