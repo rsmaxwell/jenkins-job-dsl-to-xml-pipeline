@@ -18,24 +18,9 @@ pipeline {
                   tty: true
                 - name: maven
                   image: rsmaxwell/maven
-                  volumeMounts:
-                  - name: maven-home
-                    mountPath: /home/builder/.m2
                   command:
                   - cat
                   tty: true
-                volumes:
-                - name: mydir
-                  hostPath:
-                    path: /var/local/aaa
-                    type: DirectoryOrCreate
-                - name: myfile
-                  hostPath:
-                    path: /var/local/aaa/settings.xml
-                    type: FileOrCreate
-                - name: maven-home
-                    local:
-                      path: /mnt/disks/ssd1
               '''
         }
     }
