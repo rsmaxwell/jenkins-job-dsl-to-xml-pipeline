@@ -5,20 +5,6 @@ pipeline {
               apiVersion: v1
               kind: Pod
               spec:
-                initContainers:
-                - name: install
-                  image: busybox
-                  command: [ ls, "-al" ]
-                  command: [ ls, "-al", "/init" ]
-                  command: [ ls, "-al", "/data" ]
-                  command: [ cp, "/init/settings.xml", "/data/settings.xml" ]
-                  volumeMounts:
-                  - name: mydir
-                    mountPath: "/var/local/aaa"
-                  - name: myfile
-                    mountPath: "/var/local/aaa/settings.xml"
-                  - name: maven-home
-                    mountPath: "/data"
                 containers:
                 - name: git
                   image: rsmaxwell/git
@@ -48,7 +34,8 @@ pipeline {
                     path: /var/local/aaa/settings.xml
                     type: FileOrCreate
                 - name: maven-home
-                  emptyDir: {}
+                    local:
+                      path: /mnt/disks/ssd1
               '''
         }
     }
